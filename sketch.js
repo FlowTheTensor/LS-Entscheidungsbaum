@@ -397,7 +397,7 @@ function zeichneBaum() {
       textSize(11.5);
       const w = textWidth(s) + 12;
       noStroke();
-      fill(255);
+      fill(...FARBE.flaeche);
       rect(mx - w / 2, my - 9, w, 18, 9);
       fill(...FARBE.grau);
       textAlign(CENTER, CENTER);
@@ -419,14 +419,14 @@ function zeichneKnoten(k, aufWeg) {
   const anzahl = verteilung(k.zeilen, SZ.ziel.werte.length);
 
   noStroke();
-  fill(29, 29, 28, 18);
+  fill(...FARBE.schatten, 18);
   rect(x + 1, y + 3, w, h, 10);
   if (k.blatt) {
     const f = SZ.ziel.farben[k.klasse];
     fill(f[0], f[1], f[2], 34);
     stroke(...f);
   } else if (k.split !== null) {
-    fill(255);
+    fill(...FARBE.flaeche);
     stroke(...FARBE.text);
   } else {
     fill(...FARBE.papier);
@@ -850,7 +850,7 @@ function zeichneUnreinheit() {
   if (n > 0) {
     const q = anzahl[0] / n;
     const h = unreinheit(anzahl, mass);
-    stroke(255);
+    stroke(...FARBE.flaeche);
     strokeWeight(1.5);
     fill(...FARBE.senf);
     circle(sx(q), sy(h), 12);
@@ -900,7 +900,7 @@ function zeichneAnfrage() {
     const hover = mausX() >= bx && mausX() <= bx + bw && mausY() >= y - 11 && mausY() <= y + 11;
     stroke(...(hover ? FARBE.senf : FARBE.linie));
     strokeWeight(hover ? 2 : 1.2);
-    fill(255);
+    fill(...FARBE.flaeche);
     rect(bx, y - 11, bw, 22, 11);
     noStroke();
     fill(...FARBE.text);

@@ -10,8 +10,8 @@ function erstelleUi() {
   erstelleHuelle();
   erstelleBeispielReiter(szenarioWechseln);
 
-  ui.komplett = knopf(1250, 12, 170, "Baum sofort bauen", baumKomplett, "kopf");
-  ui.csv = knopf(1428, 12, 148, "CSV speichern", csvSpeichern, "kopf");
+  ui.komplett = knopf(1210, 12, 170, "Baum sofort bauen", baumKomplett, "kopf");
+  ui.csv = knopf(1388, 12, 148, "CSV speichern", csvSpeichern, "kopf");
 
   // --- Ablauf (Erklärfeld) ---------------------------------------------------
   ui.schritt = knopf(876, 284, 190, "Schritt ▶ (→)", schritt, "dunkel");

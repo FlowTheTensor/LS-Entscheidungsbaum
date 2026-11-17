@@ -110,6 +110,7 @@ Im Modus „selbst wählen“ klickt man im Feld „Informationsgewinn“ auf ei
 | Klick auf ein Merkmal im Feld „Informationsgewinn“ | danach aufteilen (Modus „selbst wählen“) |
 | Klick auf einen Wert der Anfrage | Wert wechseln – der Weg durch den Baum ändert sich sofort |
 | Maus über Knoten, Tabelle und Werte | Erklärungen und zugehörige Zeilen |
+| Mond / Sonne oben rechts | dunkles oder helles Farbschema; die Wahl wird im Browser gespeichert und gilt für alle Lernsituationen |
 
 **Einstellungen:** Unreinheitsmaß (Entropie / Gini-Unreinheit), Aufteilen (automatisch: größter IG / selbst wählen), Tempo, maximale Tiefe (unbegrenzt, 1, 2 oder 3 Ebenen). „CSV speichern“ lädt die Trainingsdaten herunter (z. B. für Excel oder Python).
 
@@ -139,6 +140,7 @@ Im Modus „selbst wählen“ klickt man im Feld „Informationsgewinn“ auf ei
 | `ui.js` | Knöpfe und Auswahllisten |
 | `sketch.js` | Ablauf, Zeichnen des Baums, Erklärtexte |
 | `assets/logo-jps.png` | Logo der Jakob-Preh-Schule |
+| `assets/logo-jps-hell.png` | Logo in Weiß für das dunkle Farbschema |
 | `libraries/p5.min.js` | p5.js (lokal, damit die Seite auch offline läuft) |
 
 Ein weiteres Beispiel lässt sich ergänzen, indem man in `daten.js` einen Eintrag in `SZENARIEN` hinzufügt (Merkmale mit ihren Werten, Zielklasse mit Farben, Trainingszeilen im Klartext, Anfrage). Es erscheint dann automatisch als weiterer Reiter in der Beispiel-Leiste. Tippfehler in den Werten werden beim Laden gemeldet.
@@ -155,6 +157,7 @@ Am einfachsten in VS Code mit der Erweiterung **Live Server**: Rechtsklick auf `
 - Fehler in `draw()` werden abgefangen und als Hinweis angezeigt, statt das Programm einzufrieren.
 - Die Trainingsdaten stehen in `daten.js` im Klartext („jung“, „hoch“ …) und werden beim Laden in Zahlen umgewandelt.
 - `basis.js` ist in allen KI-Klassifikations-Seiten (Logistische Regression, kNN, Naiver Bayes, Entscheidungsbaum) identisch.
+- **Farbschema hell/dunkel:** Alle Farben stehen in zwei Paletten (`FARBE_HELL`, `FARBE_DUNKEL`); `FARBE` enthält die aktive Palette und wird beim Umschalten in place überschrieben. Die CSS-Variablen in `style.css` wechseln über die Klasse `dunkelmodus` am `<html>`-Element. Die Wahl steht im `localStorage` unter `jps-lernsituationen-farbschema` (ohne Speicher gilt die Systemeinstellung). Im dunklen Schema zeigt die Kopfzeile `assets/logo-jps-hell.png`.
 
 ## Lizenz
 
@@ -175,5 +178,5 @@ Vorschlag für die Namensnennung: *„KI-Klassifikation · Entscheidungsbaum (ID
 | Bestandteil | Rechte |
 |---|---|
 | `libraries/p5.min.js` | [p5.js](https://p5js.org), GNU LGPL 2.1 |
-| `assets/logo-jps.png` | Logo der Jakob-Preh-Schule – alle Rechte bei der Schule |
+| `assets/logo-jps.png`, `assets/logo-jps-hell.png` | Logo der Jakob-Preh-Schule – alle Rechte bei der Schule |
 | Schriften Quicksand, Inter, JetBrains Mono | über Google Fonts eingebunden, SIL Open Font License 1.1 |
